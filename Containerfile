@@ -10,8 +10,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     iverilog yosys \
-    python3 python3-pip python3-venv \
-    ripgrep fd-find && \
+    python3 python3-pip python3-venv libpython3-dev \
+    make ripgrep fd-find && \
     ln -sf "$(which fdfind)" /usr/local/bin/fd && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
